@@ -72,7 +72,7 @@ nav {
 .logo-rio {
   font-weight: 300;
   color: var(--muted);
-  margin-left: -0.05em;
+  margin-left: -0.09em;
 }
 
 .nav-links {
@@ -125,7 +125,7 @@ nav {
 .hero-wordmark .rio {
   font-weight: 300;
   color: var(--muted);
-  margin-left: -0.03em;
+  margin-left: -0.06em;
 }
 
 .hero-sub {
