@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+/* ─── VARIABLES ───────────────────────────────── */
+:root {
+  --bg:        #F7F6F2;
+  --bg-alt:    #F0EDE7;
+  --text:      #191917;
+  --muted:     #8E8A84;
+  --accent:    #A89880;
+  --border:    #DED9D2;
+  --nav-h:     64px;
+}
+
+/* ─── RESET ───────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ─── ANT SVG ICON ────────────────────────────── */
+.ant-icon {
+  display: block;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ─── NAVIGATION ──────────────────────────────── */
+nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 56px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo .ant-icon { width: 16px; height: 22px; }
+
+.logo-word {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.logo-ANT {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.logo-rio {
+  font-weight: 300;
+  color: var(--muted);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--text); }
+
+/* ─── HOME HERO ───────────────────────────────── */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 32px;
+}
+
+.hero .ant-icon {
+  width: 44px;
+  height: 62px;
+  margin-bottom: 28px;
+}
+
+.hero-wordmark {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(5.5rem, 16vw, 12rem);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+}
+
+.hero-wordmark .ANT {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.hero-wordmark .rio {
+  font-weight: 300;
+  color: var(--muted);
+}
+
+.hero-sub {
+  margin-top: 28px;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero-rule {
+  width: 1px;
+  height: 56px;
+  background: var(--border);
+  margin: 48px auto 0;
+}
+
+/* ─── INNER PAGE HEADER ───────────────────────── */
+.page-top {
+  padding-top: calc(var(--nav-h) + 80px);
+  padding-bottom: 56px;
+}
+
+.page-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.page-rule {
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+  margin-top: 24px;
+}
+
+/* ─── LAYOUT ──────────────────────────────────── */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 56px;
+}
+
+.container-wide {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 56px;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.section + .section {
+  border-top: 1px solid var(--border);
+}
+
+.section-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+
+/* ─── MUSIC PAGE ──────────────────────────────── */
+.track-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.track {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 28px;
+  align-items: start;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.track:first-child { border-top: 1px solid var(--border); }
+
+.track-num {
+  font-size: 0.68rem;
+  color: var(--muted);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  padding-top: 6px;
+}
+
+.track-body h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.track-body .track-meta {
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+}
+
+.track-body audio {
+  height: 28px;
+  width: 360px;
+  max-width: 100%;
+  opacity: 0.75;
+  filter: grayscale(0.4);
+}
+
+/* ─── SHOWS PAGE ──────────────────────────────── */
+.shows-section-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.show-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+}
+
+.show-item {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  align-items: start;
+  gap: 40px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.show-item:first-child { border-top: 1px solid var(--border); }
+
+.show-date {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.2;
+  font-size: 0.95rem;
+}
+
+.show-date .day {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1;
+}
+
+.show-info h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.show-info .location {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.show-info .note {
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.show-tag {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  white-space: nowrap;
+  align-self: center;
+}
+
+.show-tag.past { opacity: 0.5; }
+
+/* ─── PHOTOS PAGE ─────────────────────────────── */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.photo-grid a {
+  display: block;
+  overflow: hidden;
+}
+
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  filter: saturate(0.8) brightness(0.97);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.photo-grid a:hover img {
+  filter: saturate(1) brightness(1.02);
+  transform: scale(1.02);
+}
+
+.photo-grid .span-2 { grid-column: span 2; }
+
+.photo-caption {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+/* ─── ABOUT PAGE ──────────────────────────────── */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.about-bio p {
+  font-size: 0.95rem;
+  line-height: 1.95;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.about-bio p:last-child { margin-bottom: 0; }
+
+.members {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.member-rule {
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+  margin-bottom: 16px;
+}
+
+.member h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.member .role {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.member p {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ─── FOOTER ──────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 36px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+}
+
+.footer-logo .ANT { font-weight: 600; }
+.footer-logo .rio { font-weight: 300; color: var(--muted); }
+
+footer small {
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
