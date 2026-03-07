@@ -496,6 +496,84 @@ nav {
 
 .contact-form button:hover { opacity: 0.75; }
 
+/* ─── HAMBURGER / MOBILE NAV ──────────────────── */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 101;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--text);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+nav.open .nav-toggle span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+nav.open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+nav.open .nav-toggle span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  nav { padding: 0 28px; }
+
+  .nav-toggle { display: flex; }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0 20px;
+    z-index: 99;
+  }
+
+  nav.open .nav-links { display: flex; }
+
+  .nav-links a {
+    display: block;
+    padding: 13px 28px;
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+  }
+
+  .hero-wordmark {
+    font-size: clamp(3.5rem, 18vw, 6rem);
+  }
+
+  .container,
+  .container-wide { padding: 0 28px; }
+
+  .about-layout,
+  .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .photo-grid .span-2 { grid-column: span 2; }
+
+  .show-item { grid-template-columns: 80px 1fr; }
+  .show-tag { display: none; }
+
+  footer { padding: 32px 28px; }
+}
+
 /* ─── FOOTER ──────────────────────────────────── */
 footer {
   border-top: 1px solid var(--border);
