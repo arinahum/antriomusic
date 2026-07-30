@@ -346,12 +346,14 @@ nav {
 }
 
 .tickets-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 5px 14px;
+  padding: 7px 16px;
   background: var(--text);
   color: var(--bg);
   border-radius: 20px;
@@ -360,6 +362,12 @@ nav {
 }
 
 .tickets-btn:hover { opacity: 0.75; }
+
+.ticket-icon {
+  width: 15px;
+  height: 10px;
+  flex-shrink: 0;
+}
 
 .no-cover-label {
   font-family: 'Cormorant Garamond', Georgia, serif;
@@ -621,8 +629,14 @@ nav.open .nav-toggle span:nth-child(3) {
   .photo-grid { grid-template-columns: repeat(2, 1fr); }
   .photo-grid .span-2 { grid-column: span 2; }
 
-  .show-item { grid-template-columns: 80px 1fr; }
+  .show-item { grid-template-columns: 80px 1fr; gap: 0 24px; }
   .show-tag { display: none; }
+
+  .show-actions {
+    grid-column: 2;
+    align-items: flex-start;
+    margin-top: 18px;
+  }
 
   footer { padding: 32px 28px; }
 }
